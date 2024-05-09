@@ -1,0 +1,347 @@
+{
+	"info": {
+		"_postman_id": "5ac6e228-4bb2-4ff0-a895-c03a31a063d7",
+		"name": "assignment 2 tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34450895"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8000/users/7/businesses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/users/7/businesses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"7",
+						"businesses"
+					]
+				},
+				"description": "returns all businesses with ownerid=7"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/users/26/reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/users/26/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"26",
+						"reviews"
+					]
+				},
+				"description": "returns all reviews with userid=26"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/users/25/photos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/users/25/photos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"25",
+						"photos"
+					]
+				},
+				"description": "returns all photos with userid=25"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/businesses/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/businesses/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						""
+					]
+				},
+				"description": "returns the first 10 business (page 1) and links to the next pages"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/businesses/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"id\": 19,\r\n    \"ownerid\": 0,\r\n    \"name\": \"Tim's\",\r\n    \"address\": \"back alley\",\r\n    \"city\": \"Corvallis\",\r\n    \"state\": \"OR\",\r\n    \"zip\": \"97333\",\r\n    \"phone\": \"541-333-3333\",\r\n    \"category\": \"Restaurant\",\r\n    \"subcategory\": \"Brewpub\",\r\n    \"website\": \"http://waw.com\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/businesses/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						""
+					]
+				},
+				"description": "creates a new business"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/businesses/18",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"id\": 18,\r\n    \"ownerid\": 0,\r\n    \"name\": \"Name Change Success\",\r\n    \"address\": \"3415 SW Deschutes St.\",\r\n    \"city\": \"Corvallis\",\r\n    \"state\": \"OR\",\r\n    \"zip\": \"97333\",\r\n    \"phone\": \"541-752-2337\",\r\n    \"category\": \"Restaurant\",\r\n    \"subcategory\": \"Brewpub\",\r\n    \"website\": \"http://block15.com\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/businesses/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/businesses/19",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/businesses/19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						"19"
+					]
+				},
+				"description": "deletes the business with id=19"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/reviews",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"id\": 10,\r\n        \"userid\": 25,\r\n        \"businessid\": 3,\r\n        \"dollars\": 2,\r\n        \"stars\": 4.5\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/reviews/10",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"id\": 10,\r\n        \"userid\": 25,\r\n        \"businessid\": 3,\r\n        \"dollars\": 2,\r\n        \"stars\": 4.5,\r\n        \"review\": \"this review was modified\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/reviews/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"reviews",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/reviews/10",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/reviews/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"reviews",
+						"10"
+					]
+				},
+				"description": "deletes review with id=10"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/photos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"id\": 10,\r\n    \"userid\": 6,\r\n    \"businessid\": 17,\r\n    \"caption\": \"Not coke!\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/photos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"photos"
+					]
+				},
+				"description": "post a new photo"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/photos/10",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": 6,\r\n    \"businessid\": 17,\r\n    \"caption\": \"Not cat!\",\r\n    \"id\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/photos/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"photos",
+						"10"
+					]
+				},
+				"description": "modifies thoto with id=10"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/photos/10",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/photos/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"photos",
+						"10"
+					]
+				},
+				"description": "deletes photo with id=10"
+			},
+			"response": []
+		}
+	]
+}
