@@ -2,6 +2,7 @@ const express = require('express')
 const morgan = require('morgan')
 
 const api = require('./api')
+const {connectToDb} = require("./mongodb")
 
 const app = express()
 const port = process.env.PORT || 8000
@@ -38,6 +39,9 @@ app.use('*', function (err, req, res, next) {
   })
 })
 
-app.listen(port, function() {
-  console.log("== Server is running on port", port)
+connectToDb().then(()=>{
+  app.listen(port, function() {
+    console.log("== Server is running on port", port)
+  })
 })
+
