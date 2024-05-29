@@ -10,6 +10,8 @@ const mongoAuthDb = process.env.MONGO_AUTH_DB || mongoDbName
 
 const mongoUrl = `mongodb://${mongoUser}:${mongoPassword}@${mongoHost}:${mongoPort}/${mongoAuthDb}`
 
+console.log("mongodb.js: " + mongoUrl)
+
 let db = null
 
 exports.connectToDb = async function connectToDb(){

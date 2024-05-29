@@ -96,7 +96,7 @@ router.post('/', async function (req, res, next) {
     result = await collection.insertOne(business)
 
     res.status(201).send({
-      id: business.id,
+      id_: result.insertedId,
       links: {
         business: `/businesses/${business.id}`
       }
