@@ -15,19 +15,21 @@ Database replication is the process of maintaining multiple copies of the applic
 
 
 Database replication checklist
-1. At least 2 database replicas must be maintained, each running in a separate Docker container.
-2. Each replica must contain a complete copy of the entire database.
-3. Take down one or two containers and the server should stay working as normal. 
-4. Each database replica runs in its own separate Docker container. A replication scheme with 3 replicas of the database should have 3 separate Docker containers, one running each of the replicas.
-5. Docker containers needs to be connected using Docker networking in order for them to successfully replicate each other.
-6. Check that the replicaiton is sucesfull by looking up that the data inserted into one of the replicas is successfully copied to the other replicas
+- At least 2 database replicas must be maintained, each running in a separate Docker container.
+- Each replica must contain a complete copy of the entire database.
+- Take down one or two containers and the server should stay working as normal. 
+- Each database replica runs in its own separate Docker container. A replication scheme with 3 replicas of the database should have 3 separate Docker containers, one running each of the replicas.
+- Docker containers needs to be connected using Docker networking in order for them to successfully replicate each other.
+- Check that the replicaiton is sucesfull by looking up that the data inserted into one of the replicas is successfully copied to the other replicas
 
 
 **Setup**
 
-The starter code's API server is implemented in `server.js`, and individual routes are modularized within the `api/` directory.  Tests and a testing environment for the API are included in the `tests/` directory.  You can import these tests into either Postman or Insomnia and build on them if you like.  Note that, depending on where you're running your API server, you may need to update the `baseUrl` variable in the included testing environment to reflect the URL for your own server.
+The API server is implemented in `server.js`, and individual routes are modularized within the `api/` directory.  Tests and a testing environment for the API are included in the `tests/` directory.  You can import these tests into either Postman or Insomnia and build on them if you like.  Note that, depending on where you're running your API server, you may need to update the `baseUrl` variable in the included testing environment to reflect the URL for your own server.
 
-The starter code also includes an `openapi.yaml` file in the `public/` directory.  You can import this file into the OpenAPI editor at https://editor.swagger.io/ to generate documentation for the server to see how its endpoints are set up.
+The code also includes an `openapi.yaml` file in the `public/` directory.  You can import this file into the OpenAPI editor at https://editor.swagger.io/ to generate documentation for the server to see how its endpoints are set up.
+
+For replication guide use [Replica Set](https://www.mongodb.com/docs/manual/replication/).
 
 
 ## Use a database to power your API
